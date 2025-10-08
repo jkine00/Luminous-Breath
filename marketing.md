@@ -44,7 +44,7 @@ BreathApp is a guided breathing meditation app designed to help you harness the 
 - Athletic performance enhancement
 - Sleep preparation
 - Mindfulness and meditation practice
-- Breathwork techniques (Wim Hof Method, pranayama, etc.)
+- Breathwork techniques
 
 ## How It Works
 1. Choose a session or create your own
