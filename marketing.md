@@ -1,6 +1,6 @@
 # BreathApp - Transform Your Mind Through Breathwork
 
-![BreathApp Icon](link-to-icon-image) <!-- Optional: Add app icon -->
+![AppIcon](AppIcon.png) <!-- Optional: Add app icon -->
 
 ## Transform Your Mind and Body Through the Power of Breathwork
 
