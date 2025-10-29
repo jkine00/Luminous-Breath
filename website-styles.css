@@ -28,7 +28,7 @@ body {
 nav {
     background: var(--bg-primary);
     border-bottom: 1px solid var(--border-color);
-    padding: 1rem 0;
+    padding: 0.5rem 0;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -39,7 +39,7 @@ nav {
 nav .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 1.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -80,58 +80,56 @@ nav ul li a.active {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 1.5rem;
 }
 
 main {
-    padding: 3rem 0;
-    min-height: calc(100vh - 200px);
+    padding: 1rem 0;
+    min-height: calc(100vh - 150px);
 }
 
 /* Hero Section */
 .hero {
     text-align: center;
-    padding: 4rem 0;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    border-radius: 20px;
-    margin-bottom: 3rem;
+    padding: 1.5rem 2rem;
+    margin-bottom: 1.5rem;
+    background: transparent;
+    color: var(--text-primary);
 }
 
 .hero h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
     font-weight: 700;
-    color: white;
+    color: var(--text-primary);
 }
 
 .hero p {
-    font-size: 1.25rem;
-    margin-bottom: 2rem;
-    color: white;
-    opacity: 0.95;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
 }
 
 .hero .btn {
     display: inline-block;
-    padding: 1rem 2rem;
-    background: white;
-    color: var(--primary-color);
+    padding: 0.75rem 1.5rem;
+    background: var(--primary-color);
+    color: white;
     text-decoration: none;
-    border-radius: 50px;
+    border-radius: 8px;
     font-weight: 600;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: background 0.3s;
+    margin-top: 0.5rem;
 }
 
 .hero .btn:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-lg);
+    background: var(--primary-dark);
 }
 
 /* Sections */
 section {
-    margin-bottom: 3rem;
+    margin-bottom: 1.5rem;
 }
 
 h1 {
@@ -141,9 +139,9 @@ h1 {
 }
 
 h2 {
-    font-size: 2rem;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
+    font-size: 1.75rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
     color: var(--text-primary);
 }
 
@@ -163,13 +161,13 @@ p {
 .features-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin: 2rem 0;
+    gap: 1rem;
+    margin: 1rem 0;
 }
 
 .feature-card {
     background: var(--bg-secondary);
-    padding: 2rem;
+    padding: 1.25rem;
     border-radius: 16px;
     transition: transform 0.3s, box-shadow 0.3s;
 }
@@ -258,9 +256,9 @@ ul li, ol li {
 /* Footer */
 footer {
     background: var(--bg-secondary);
-    padding: 2rem 0;
+    padding: 1rem 0;
     text-align: center;
-    margin-top: 4rem;
+    margin-top: 2rem;
     border-top: 1px solid var(--border-color);
 }
 
@@ -379,6 +377,6 @@ footer p {
 .section-divider {
     height: 1px;
     background: var(--border-color);
-    margin: 3rem 0;
+    margin: 1.5rem 0;
 }
 
