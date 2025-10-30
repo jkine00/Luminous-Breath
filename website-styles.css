@@ -235,6 +235,7 @@ table thead tr:last-child th {
     vertical-align: bottom;
 }
 
+
 table td {
     padding: 0.75rem 0.5rem;
     border-bottom: 1px solid var(--border-color);
