@@ -215,14 +215,17 @@ table {
 
 /* Table wrapper for horizontal scrolling on mobile */
 .table-wrapper {
-    overflow-x: auto;
-    overflow-y: hidden;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
     -webkit-overflow-scrolling: touch;
     margin: 1.5rem 0;
     width: 100%;
     max-width: 100%;
     display: block;
     position: relative;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    scrollbar-width: thin;
+    scroll-behavior: smooth;
 }
 
 .table-wrapper::-webkit-scrollbar {
@@ -375,41 +378,37 @@ footer p {
         padding: 0 1rem;
     }
     
+    .container {
+        overflow-x: hidden;
+        width: 100%;
+    }
+    
     .table-wrapper {
         margin: 1rem 0;
         -webkit-overflow-scrolling: touch;
         scrollbar-width: thin;
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+        -webkit-overflow-scrolling: touch !important;
+        touch-action: pan-x;
     }
     
     .table-wrapper table {
-        min-width: 500px;
+        min-width: 600px;
         font-size: 0.7rem;
+        width: auto;
+        display: table;
     }
     
     table {
         font-size: 0.75rem;
-        display: block;
-        overflow-x: auto;
     }
     
     table th,
     table td {
-        padding: 0.5rem 0.25rem;
+        padding: 0.5rem 0.35rem;
         font-size: 0.7rem;
-        min-width: 80px;
-    }
-    
-    /* Make table headers and cells smaller on mobile */
-    table th:first-child,
-    table td:first-child {
-        position: sticky;
-        left: 0;
-        background: var(--primary-color);
-        z-index: 10;
-    }
-    
-    table td:first-child {
-        background: var(--bg-primary);
+        white-space: nowrap;
     }
 
     .hero h1 {
