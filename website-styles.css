@@ -140,15 +140,15 @@ h1 {
 
 h2 {
     font-size: 1.75rem;
-    margin-top: 1.5rem;
-    margin-bottom: 0.75rem;
+    margin-top: 0.75rem;
+    margin-bottom: 0.5rem;
     color: var(--text-primary);
 }
 
 h3 {
     font-size: 1.5rem;
-    margin-top: 1.5rem;
-    margin-bottom: 0.75rem;
+    margin-top: 0.75rem;
+    margin-bottom: 0.5rem;
     color: var(--text-primary);
 }
 
@@ -203,9 +203,8 @@ p {
 
 /* Tables */
 table {
-    width: 100%;
     border-collapse: collapse;
-    margin: 1.5rem 0;
+    margin: 1rem 0;
     background: var(--bg-primary);
     border-radius: 12px;
     overflow: hidden;
@@ -213,19 +212,19 @@ table {
     font-size: 0.85rem;
 }
 
+/* Tables without wrapper (2-column tables) */
+table:not(.table-wrapper table) {
+    width: 100%;
+}
+
 /* Table wrapper for horizontal scrolling on mobile */
 .table-wrapper {
-    overflow-x: auto !important;
-    overflow-y: hidden !important;
+    overflow-x: scroll;
+    overflow-y: visible;
     -webkit-overflow-scrolling: touch;
-    margin: 1.5rem 0;
+    margin: 1rem 0;
     width: 100%;
-    max-width: 100%;
     display: block;
-    position: relative;
-    -ms-overflow-style: -ms-autohiding-scrollbar;
-    scrollbar-width: thin;
-    scroll-behavior: smooth;
 }
 
 .table-wrapper::-webkit-scrollbar {
@@ -243,10 +242,10 @@ table {
 }
 
 .table-wrapper table {
-    min-width: 600px;
+    min-width: 650px;
     margin: 0;
     display: table;
-    width: 100%;
+    width: auto;
 }
 
 table th {
@@ -379,36 +378,45 @@ footer p {
     }
     
     .container {
-        overflow-x: hidden;
-        width: 100%;
+        padding: 0 0.75rem;
+        overflow-x: visible;
     }
     
     .table-wrapper {
-        margin: 1rem 0;
+        margin: 0.75rem -0.75rem;
+        padding: 0 0.75rem;
+        width: calc(100% + 1.5rem);
+        overflow-x: scroll;
+        overflow-y: visible;
         -webkit-overflow-scrolling: touch;
-        scrollbar-width: thin;
-        overflow-x: auto !important;
-        overflow-y: hidden !important;
-        -webkit-overflow-scrolling: touch !important;
-        touch-action: pan-x;
     }
     
     .table-wrapper table {
         min-width: 600px;
         font-size: 0.7rem;
-        width: auto;
-        display: table;
     }
     
     table {
         font-size: 0.75rem;
+        margin: 0.75rem 0;
     }
     
     table th,
     table td {
-        padding: 0.5rem 0.35rem;
+        padding: 0.5rem 0.4rem;
         font-size: 0.7rem;
-        white-space: nowrap;
+    }
+    
+    h2 {
+        margin-top: 0.5rem;
+        margin-bottom: 0.4rem;
+        font-size: 1.5rem;
+    }
+    
+    h3 {
+        margin-top: 0.5rem;
+        margin-bottom: 0.4rem;
+        font-size: 1.25rem;
     }
 
     .hero h1 {
