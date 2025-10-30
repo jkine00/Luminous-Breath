@@ -220,11 +220,19 @@ table th {
     text-align: left;
     font-weight: 600;
     font-size: 0.8rem;
-    vertical-align: middle;
+    vertical-align: bottom;
 }
 
 table th[rowspan] {
     vertical-align: middle;
+}
+
+table thead tr:first-child th[rowspan] {
+    vertical-align: middle;
+}
+
+table thead tr:last-child th {
+    vertical-align: bottom;
 }
 
 table td {
