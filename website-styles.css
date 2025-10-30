@@ -374,10 +374,6 @@ footer p {
     }
     
     .container {
-        padding: 0 1rem;
-    }
-    
-    .container {
         padding: 0 0.75rem;
         overflow-x: visible;
     }
