@@ -210,42 +210,7 @@ table {
     overflow: hidden;
     box-shadow: var(--shadow);
     font-size: 0.85rem;
-}
-
-/* Tables without wrapper (2-column tables) */
-table:not(.table-wrapper table) {
     width: 100%;
-}
-
-/* Table wrapper for horizontal scrolling on mobile */
-.table-wrapper {
-    overflow-x: scroll;
-    overflow-y: visible;
-    -webkit-overflow-scrolling: touch;
-    margin: 1rem 0;
-    width: 100%;
-    display: block;
-}
-
-.table-wrapper::-webkit-scrollbar {
-    height: 8px;
-}
-
-.table-wrapper::-webkit-scrollbar-track {
-    background: var(--bg-secondary);
-    border-radius: 4px;
-}
-
-.table-wrapper::-webkit-scrollbar-thumb {
-    background: var(--primary-color);
-    border-radius: 4px;
-}
-
-.table-wrapper table {
-    min-width: 650px;
-    margin: 0;
-    display: table;
-    width: auto;
 }
 
 table th {
@@ -255,6 +220,11 @@ table th {
     text-align: left;
     font-weight: 600;
     font-size: 0.8rem;
+    vertical-align: middle;
+}
+
+table th[rowspan] {
+    vertical-align: middle;
 }
 
 table td {
@@ -378,29 +348,25 @@ footer p {
         overflow-x: visible;
     }
     
-    .table-wrapper {
-        margin: 0.75rem -0.75rem;
-        padding: 0 0.75rem;
-        width: calc(100% + 1.5rem);
-        overflow-x: scroll;
-        overflow-y: visible;
-        -webkit-overflow-scrolling: touch;
-    }
-    
-    .table-wrapper table {
-        min-width: 600px;
-        font-size: 0.7rem;
-    }
-    
     table {
-        font-size: 0.75rem;
+        font-size: 0.7rem;
         margin: 0.75rem 0;
+        width: 100%;
+        table-layout: fixed;
     }
     
     table th,
     table td {
-        padding: 0.5rem 0.4rem;
-        font-size: 0.7rem;
+        padding: 0.5rem 0.25rem;
+        font-size: 0.65rem;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        hyphens: auto;
+    }
+    
+    /* Reduce font size for very long content */
+    table td {
+        line-height: 1.3;
     }
     
     h2 {
