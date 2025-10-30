@@ -216,13 +216,34 @@ table {
 /* Table wrapper for horizontal scrolling on mobile */
 .table-wrapper {
     overflow-x: auto;
+    overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
     margin: 1.5rem 0;
+    width: 100%;
+    max-width: 100%;
+    display: block;
+    position: relative;
+}
+
+.table-wrapper::-webkit-scrollbar {
+    height: 8px;
+}
+
+.table-wrapper::-webkit-scrollbar-track {
+    background: var(--bg-secondary);
+    border-radius: 4px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 4px;
 }
 
 .table-wrapper table {
     min-width: 600px;
     margin: 0;
+    display: table;
+    width: 100%;
 }
 
 table th {
@@ -232,14 +253,12 @@ table th {
     text-align: left;
     font-weight: 600;
     font-size: 0.8rem;
-    white-space: nowrap;
 }
 
 table td {
     padding: 0.75rem 0.5rem;
     border-bottom: 1px solid var(--border-color);
     font-size: 0.8rem;
-    white-space: nowrap;
 }
 
 table tr:last-child td {
@@ -356,14 +375,41 @@ footer p {
         padding: 0 1rem;
     }
     
+    .table-wrapper {
+        margin: 1rem 0;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: thin;
+    }
+    
+    .table-wrapper table {
+        min-width: 500px;
+        font-size: 0.7rem;
+    }
+    
     table {
         font-size: 0.75rem;
+        display: block;
+        overflow-x: auto;
     }
     
     table th,
     table td {
         padding: 0.5rem 0.25rem;
-        font-size: 0.75rem;
+        font-size: 0.7rem;
+        min-width: 80px;
+    }
+    
+    /* Make table headers and cells smaller on mobile */
+    table th:first-child,
+    table td:first-child {
+        position: sticky;
+        left: 0;
+        background: var(--primary-color);
+        z-index: 10;
+    }
+    
+    table td:first-child {
+        background: var(--bg-primary);
     }
 
     .hero h1 {
