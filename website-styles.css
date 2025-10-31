@@ -235,22 +235,6 @@ table thead tr:last-child th {
     vertical-align: bottom;
 }
 
-/* Eliminate gap between two-row headers */
-table thead tr:first-child th:not([rowspan]) {
-    padding-bottom: 0;
-    line-height: 1;
-    margin-bottom: 0;
-}
-
-table thead tr:last-child th {
-    padding-top: 0;
-    line-height: 1;
-    margin-top: 0;
-}
-
-table thead tr {
-    line-height: 1;
-}
 
 
 table td {
