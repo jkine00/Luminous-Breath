@@ -236,7 +236,6 @@ table thead tr:last-child th {
 }
 
 
-
 table td {
     padding: 0.75rem 0.5rem;
     border-bottom: 1px solid var(--border-color);
@@ -269,6 +268,44 @@ ul li, ol li {
     border-radius: 12px;
     margin: 1.5rem 0;
     border-left: 4px solid var(--primary-color);
+}
+
+/* Safety Notice Highlighting */
+.safety-notice {
+    background: #fff3cd;
+    padding: 2rem;
+    border-radius: 12px;
+    margin: 1.5rem 0;
+    border-left: 6px solid #ffc107;
+    box-shadow: 0 4px 12px rgba(255, 193, 7, 0.2);
+}
+
+.safety-notice p {
+    margin-bottom: 1.5rem;
+    color: #856404;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.safety-notice p:last-child {
+    margin-bottom: 0;
+}
+
+.safety-notice p strong {
+    color: #856404;
+    font-weight: 600;
+}
+
+@media (prefers-color-scheme: dark) {
+    .safety-notice {
+        background: #3d2e00;
+        border-left-color: #ffc107;
+    }
+    
+    .safety-notice p,
+    .safety-notice p strong {
+        color: #ffd54f;
+    }
 }
 
 /* Footer */
