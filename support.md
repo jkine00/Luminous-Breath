@@ -6,7 +6,7 @@ Welcome to BreathApp support! We're here to help you get the most out of your br
 
 For questions, feedback, or support requests, please reach out:
 
-- **Email**: jkine00@me.com
+- **Email**: luminousbreathapp@gmail.com
 - **GitHub Issues**: https://github.com/jkine00/BreathApp/issues](https://github.com/jkine00/BreathApp/issues)
 
 We typically respond within 1-2 business days.

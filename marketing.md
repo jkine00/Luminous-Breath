@@ -61,7 +61,7 @@ BreathApp is a guided breathing meditation app designed to help you harness the 
 BreathApp does not collect or share any personal data. All sessions and settings are stored locally on your device.
 
 ## Support
-Need help? Visit our [Support Page](support.md) or contact us at jkine00@me.com
+Need help? Visit our [Support Page](support.md) or contact us at luminousbreathapp@gmail.com
 
 ---
 

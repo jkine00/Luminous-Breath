@@ -4,7 +4,7 @@ Welcome to BreathApp - your guided breathing meditation companion.
 
 ## Support
 
-For support, please email: jkine00@me.com
+For support, please email: luminousbreathapp@gmail.com
 
 ## About
 
