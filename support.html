@@ -16,20 +16,33 @@
     </style>
     <script>
         // Scroll to section when page loads with hash (e.g. support.html#terms-of-use)
+        // For #privacy-first we use a fixed offset so the title is visible below in-app browser nav
+        var SCROLL_OFFSET_PX = 120; // space from top of viewport for nav/chrome
+
         function scrollToHash() {
             var hash = window.location.hash;
             if (hash) {
                 var id = hash.replace('#', '');
                 var el = document.getElementById(id);
                 if (el) {
-                    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    if (id === 'privacy-first') {
+                        // Scroll so "Privacy First" title is visible: element top at OFFSET from viewport top
+                        var elTop = el.getBoundingClientRect().top + window.pageYOffset;
+                        var scrollToY = elTop - SCROLL_OFFSET_PX;
+                        window.scrollTo({ top: Math.max(0, scrollToY), behavior: 'smooth' });
+                    } else {
+                        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
                 }
             }
         }
+        function runAfterPaint() {
+            setTimeout(scrollToHash, 100);
+        }
         if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', scrollToHash);
+            document.addEventListener('DOMContentLoaded', runAfterPaint);
         } else {
-            scrollToHash();
+            runAfterPaint();
         }
         window.addEventListener('hashchange', scrollToHash);
     </script>
