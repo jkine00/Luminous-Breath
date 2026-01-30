@@ -6,6 +6,30 @@
     <meta name="description" content="Luminous Breath Support - Get help with your breathing practice">
     <title>Support - Luminous Breath</title>
     <link rel="stylesheet" href="website-styles.css">
+    <style>
+        /* Ensure deep-linked sections scroll into view below nav */
+        section[id] { scroll-margin-top: 100px; }
+        html { scroll-behavior: smooth; }
+    </style>
+    <script>
+        // Scroll to section when page loads with hash (e.g. support.html#terms-of-use)
+        function scrollToHash() {
+            var hash = window.location.hash;
+            if (hash) {
+                var id = hash.replace('#', '');
+                var el = document.getElementById(id);
+                if (el) {
+                    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }
+        }
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', scrollToHash);
+        } else {
+            scrollToHash();
+        }
+        window.addEventListener('hashchange', scrollToHash);
+    </script>
 </head>
 <body>
     <nav>
