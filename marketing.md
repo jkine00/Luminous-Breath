@@ -55,7 +55,7 @@ BreathApp is a guided breathing meditation app designed to help you harness the 
 
 ## Download Now
 
-[Download on the App Store](link-to-app-store) <!-- Add when available -->
+[Download on the App Store](https://apps.apple.com/app/id6748704597)
 
 ## Privacy First
 BreathApp does not collect or share any personal data. All sessions and settings are stored locally on your device.
