@@ -127,6 +127,18 @@ main {
     background: var(--primary-dark);
 }
 
+.hero .btn.btn-secondary {
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    font-weight: 500;
+    margin-top: 0.75rem;
+}
+
+.hero .btn.btn-secondary:hover {
+    background: var(--border-color);
+}
+
 /* Sections */
 section {
     margin-bottom: 1.5rem;
