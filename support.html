@@ -76,6 +76,40 @@
 
             <div class="section-divider"></div>
 
+            <section id="help-videos">
+                <h2>Help Videos</h2>
+                <p>Select a topic, then press Play.</p>
+
+                <div class="help-video-options" role="radiogroup" aria-label="Help video topics">
+                    <label class="help-video-option">
+                        <input type="radio" name="help-video" value="videos/play-session.mp4" data-title="Play a Session" checked>
+                        <span>Play a Session</span>
+                    </label>
+                    <label class="help-video-option">
+                        <input type="radio" name="help-video" value="videos/create-cyclic-session.mp4" data-title="Create a Cyclic Session">
+                        <span>Create a Cyclic Session</span>
+                    </label>
+                    <label class="help-video-option">
+                        <input type="radio" name="help-video" value="videos/edit-sound-settings.mp4" data-title="Edit Session Sound Settings">
+                        <span>Edit Session Sound Settings</span>
+                    </label>
+                    <label class="help-video-option">
+                        <input type="radio" name="help-video" value="videos/create-guided-breath.mp4" data-title="Create a Guided Breath">
+                        <span>Create a Guided Breath</span>
+                    </label>
+                </div>
+
+                <div class="help-video-player">
+                    <video id="help-video" playsinline preload="metadata" controls controlslist="nodownload">
+                        <source src="videos/play-session.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <button type="button" id="help-video-play" class="btn help-video-play">Play</button>
+                </div>
+            </section>
+
+            <div class="section-divider"></div>
+
             <section>
                 <h2>Frequently Asked Questions</h2>
 
@@ -188,6 +222,56 @@
             <p><a href="index.html">Home</a> | <a href="setup-session.html">Setup Session</a> | <a href="safety.html">Safety</a> | <a href="support.html">Support</a></p>
         </div>
     </footer>
+    <script>
+        (function () {
+            var video = document.getElementById('help-video');
+            var playButton = document.getElementById('help-video-play');
+            var options = document.querySelectorAll('input[name="help-video"]');
+            if (!video || !playButton || !options.length) return;
+
+            function selectedOption() {
+                return document.querySelector('input[name="help-video"]:checked') || options[0];
+            }
+
+            function selectedTitle() {
+                return selectedOption().getAttribute('data-title') || 'selected video';
+            }
+
+            function updatePlayLabel() {
+                playButton.setAttribute('aria-label', 'Play ' + selectedTitle());
+            }
+
+            function loadSelectedVideo() {
+                var option = selectedOption();
+                var src = option.value;
+                var currentSrc = video.currentSrc || (video.querySelector('source') && video.querySelector('source').src) || '';
+                var alreadyLoaded = currentSrc.indexOf(src) !== -1 && !video.error;
+                video.pause();
+                if (!alreadyLoaded) {
+                    video.src = src;
+                    video.load();
+                }
+                updatePlayLabel();
+            }
+
+            options.forEach(function (option) {
+                option.addEventListener('change', loadSelectedVideo);
+            });
+
+            playButton.addEventListener('click', function () {
+                loadSelectedVideo();
+                if (video.ended) {
+                    video.currentTime = 0;
+                }
+                var playPromise = video.play();
+                if (playPromise && typeof playPromise.catch === 'function') {
+                    playPromise.catch(function () {});
+                }
+            });
+
+            updatePlayLabel();
+        })();
+    </script>
 </body>
 </html>
 
